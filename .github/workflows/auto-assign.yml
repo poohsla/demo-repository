@@ -16,7 +16,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const reviewers = ['jhkim6557']; // reviewers
+            const reviewers = ['jinhwankim6557']; // reviewers
 
             await github.rest.pulls.requestReviewers({
               owner: context.repo.owner,
@@ -28,7 +28,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const assignees = ['jhkim6557']; // assignees
+            const assignees = ['jinhwankim6557']; // assignees
             
             await github.rest.issues.addAssignees({
               owner: context.repo.owner,
