@@ -16,7 +16,12 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const reviewers = ['jinhwankim6557']; // reviewers
+            const author = context.payload.pull_request.user.login;
+            let reviewers = ['poohsla'];
+
+            if (reviewers.includes(author)) {
+              reviewers = reviewers.map(reviewer => reviewer === author ? 'jinhwankim6557' : reviewer);
+            }
 
             await github.rest.pulls.requestReviewers({
               owner: context.repo.owner,
